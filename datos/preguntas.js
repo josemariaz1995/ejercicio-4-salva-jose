@@ -2,9 +2,11 @@ const inquirer = require("inquirer");
 const { program } = require("commander");
 
 program
-  .options("--color <color>", "Eligue un color")
-  .options("--abrev <abreviatura>", "Quieres las lineas abreviadas?");
-
+  .option("--color <color>", "Eligue un color")
+  .option("--abrev", "Quieres las lineas abreviadas?");
+program.parse();
+const opciones = program.opts();
+console.log(opciones);
 inquirer
   .prompt([
     {
